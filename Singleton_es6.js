@@ -1,11 +1,16 @@
-//单例模式 es6 语法化。在JavaScript中，Singleton充当共享资源命名空间，全局命名空间中隔离出代码实现，从而为函数提供单一访问点。
+//单例模式 es6 语法化。Singleton 作为类，当我们首次去实例化对象时，Singleton 会提供唯一的访问点。
 
 class Singleton {
 
     constructor(options) {
-        [this.name, this.age, this.sex] = [options.name, options.age, options.sex];
+        [this.name, this.age, this.sex] = [options.name, options.age, options.sex]; //es6 解构赋值
     }
 
+    /**
+     * Singleton 类的唯一实例化访问点
+     * @param options  options 包含 Singleton 的配置信息，这里运用了 es6 默认值的特性
+     * @returns {Singleton} 实例化对象
+     */
     static getInstance(options = {name: "SingletonTester", age: 20, sex: "男"}) {
         if (!Singleton.instance) {
             Singleton.instance = new Singleton(options);
