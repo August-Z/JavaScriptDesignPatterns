@@ -14,7 +14,7 @@ const SingletonTester = (function () {
 
     return {
         name: "SingletonTester",
-        getInstance(options = {}) {
+        getInstance(options) {
             if (instance === undefined) {
                 instance = new Singleton(options);
             }
