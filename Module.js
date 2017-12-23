@@ -7,7 +7,7 @@ let testModule = (function () {
         incrementCounter: function () {
             return ++count;
         },
-        reset: function () {
+        resetCounter: function () {
             console.log("counter value prior to reset:" + count)
             count = 0;
         }
@@ -15,7 +15,7 @@ let testModule = (function () {
 })();
 
 testModule.incrementCounter();
-testModule.reset();
+testModule.resetCounter();
 
 
 // Module 实现购物车
